@@ -24,11 +24,12 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
-app.get("/api/:date",(req, res)=> {
+app.get("/api/:date?",(req, res)=> {
   const dateParam = req.params.date
   let now;
   if(!dateParam){
     now = new Date()
+
   }else{
     if(!isNaN(dateParam)){
       now = new Date(parseInt(dateParam))
